@@ -3,3 +3,18 @@
     background-color: var(--color-secondary);
     border: 1px solid red;
 }
+
+.sideSection {
+    border-top: solid black 2px;
+    border-bottom: solid black 2px;
+    height: fit-content;
+    width: 30rem;
+    background: aqua;
+    color: purple;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    h3{
+        color: black;
+    }
+}
