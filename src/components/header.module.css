@@ -1,4 +1,253 @@
 .header {
-  height: 200px;
-  background-color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  height: 64px;
+  padding: 0 16px;
+  background: var(--color-secondary);
+  box-shadow: 0 1px 0 rgba(57, 57, 57, 0.04));
+  z-index: 10;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu {
+  background: transparent;
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.play {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+  user-select: none;
+}
+
+.center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.moreBtn {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  background: transparent;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  cursor: pointer;
+}
+
+.moreDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: #f1f1f1;
+}
+
+.loginBtn {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 15px;
+  border: 1px solid #3f3f46;
+  background: transparent;
+  color: #f1f1f1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 27px;
+  cursor: pointer;
+}
+
+.loginIcon {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #d9d9d9;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.rightDivider {
+  width: 1px;
+  height: 40px;
+  background: #464646;
+}
+
+.search {
+  width: 420px;
+  max-width: 70%;
+  display: flex;
+  align-items: center;
+  background: rgb(205, 204, 204);
+  border-radius: 48px;
+  padding: 6px 10px;
+  box-shadow: 0 2px 6px rgba(31, 31, 31, 0.06);
+}
+
+.input {
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 8px 10px;
+  font-size: 14px;
+  background: transparent;
+}
+
+.searchBtn {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.searchBtn img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: block;
+}
+
+.menu:focus,
+.searchBtn:focus,
+.moreBtn:focus,
+.loginBtn:focus,
+.input:focus {
+  outline: 2px solid rgba(45, 46, 45, 0.08);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (max-width: 800px) {
+  .header {
+    padding: 0 10px;
+    height: 56px;
+  }
+
+  .play {
+    width: 36px;
+    height: 36px;
+  }
+
+  .search {
+    width: 320px;
+    max-width: 60%;
+  }
+
+  .searchBtn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .loginBtn {
+    font-size: 18px;
+    height: 36px;
+    padding: 0 10px;
+  }
+
+  .rightDivider {
+    height: 34px;
+  }
+
+  .searchBtn img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .play {
+    width: 30px;
+    height: 30px;
+  }
+
+  .search {
+    width: 200px;
+    max-width: 55%;
+    padding: 4px 8px;
+  }
+
+  .input {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  .searchBtn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .searchBtn img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .brand {
+    display: none;
+  }
+
+  .right {
+    gap: 10px;
+  }
+
+  .loginBtn {
+    font-size: 14px;
+  }
+
+  .rightDivider {
+    display: none;
+  }
 }
