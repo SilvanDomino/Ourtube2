@@ -15,8 +15,8 @@
 }
 
 .videoImg {
-    width: 180px;
-    height: auto;
+    width: 120px;
+    height: 120px;
     display: block;
     border-radius: 12px;
     object-fit: cover;

@@ -1,20 +1,31 @@
 import { useEffect, useState } from 'react';
 
-export function useVideoThumbnail(videoSrc) {
+export function useVideoData(videoSrc) {
   const [thumbnail, setThumbnail] = useState('');
+  const [duration, setDuration] = useState('');
 
   useEffect(() => {
+    if (!videoSrc) return;
+
     const video = document.createElement('video');
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
 
     video.src = videoSrc;
-    video.crossOrigin = 'anonymous';
     video.muted = true;
     video.playsInline = true;
 
-    const handleLoaded = () => {
-      video.currentTime = 1;
+    const formatTime = (time) => {
+      const minutes = Math.floor(time / 60);
+      const seconds = Math.floor(time % 60)
+        .toString()
+        .padStart(2, '0');
+      return `${minutes}:${seconds}`;
+    };
+
+    const handleLoadedMetadata = () => {
+      setDuration(formatTime(video.duration));
+      video.currentTime = 30;
     };
 
     const handleSeeked = () => {
@@ -22,19 +33,17 @@ export function useVideoThumbnail(videoSrc) {
       canvas.height = video.videoHeight;
 
       ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-      const image = canvas.toDataURL('image/jpeg');
-      setThumbnail(image);
+      setThumbnail(canvas.toDataURL('image/jpeg'));
     };
 
-    video.addEventListener('loadeddata', handleLoaded);
+    video.addEventListener('loadedmetadata', handleLoadedMetadata);
     video.addEventListener('seeked', handleSeeked);
 
     return () => {
-      video.removeEventListener('loadeddata', handleLoaded);
+      video.removeEventListener('loadedmetadata', handleLoadedMetadata);
       video.removeEventListener('seeked', handleSeeked);
     };
   }, [videoSrc]);
 
-  return thumbnail;
+  return { thumbnail, duration };
 }
