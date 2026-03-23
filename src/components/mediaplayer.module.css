@@ -19,7 +19,18 @@
   transition: opacity 0.2s ease;
 }
 
-.mediaplayer:hover .controls {
+.bottomControls {
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.mediaplayer:hover .controls,
+.mediaplayer:hover .bottomControls {
   opacity: 1;
   pointer-events: auto;
 }
