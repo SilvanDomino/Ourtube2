@@ -1,5 +1,5 @@
 import styles from './mediaplayer.module.css';
-import video1 from '../assets/Nothing But Thieves - Overcome.mp4';
+import video1 from '../assets/NGYU.mp4';
 
 export function Mediaplayer() {
   return (
