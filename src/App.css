@@ -1,4 +1,5 @@
 main {
     display: grid;
     grid-template-columns: 300px 1fr 300px;
+    color: antiquewhite;
 }
