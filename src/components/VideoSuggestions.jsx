@@ -1,18 +1,24 @@
 import styles from "./videoSuggestions.module.css";
+import imgHolder from "../assets/imgHolder.jpg";
+import videoFile from "../assets/Nothing But Thieves - Overcome.mp4";
+import { useVideoThumbnail } from "./GenerateThumbnail";
 
 export function VideoSuggestions() {
-  const video_info = [
-    {
-      url: "https://i.ytimg.com/vi/xJ9oQKMZOh4/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBcIuIb-RAAx351tb7M9i1cRQ4w5w",
-      title: "SIDEMEN CHARITY MATCH 2026: THE DRAFT",
-    },
-  ];
-  const suggestion = video_info.map((item) => (
-    <div className={styles.container}>
-      <img src={item.url} alt="" />
-      <p>{item.title}</p>
+  const thumbnail = useVideoThumbnail(videoFile);
+  return (
+    <div className={styles.videoSuggestions}>
+      <div className={styles.videoSuggestion}>
+        {thumbnail ? (
+          <img src={thumbnail} className={styles.videoImg} />
+        ) : (
+          <div>Loading...</div>
+        )}
+        <div className={styles.videoDescription}>
+          <div className={styles.videoTitle}>Title</div>
+          <div className={styles.videoUploader}>Uploader</div>
+          <div className={styles.videoLength}>00:00</div>
+        </div>
+      </div>
     </div>
-  ));
-
-  return <div className={styles.videoSuggestions}>{suggestion}</div>;
+  );
 }

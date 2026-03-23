@@ -2,4 +2,32 @@
     height: 100vh;
     background-color: var(--color-secondary);
     border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+}
+
+.videoSuggestion {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.videoImg {
+    width: 180px;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.videoDescription {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.videoTitle {
+    font-weight: 600;
 }
