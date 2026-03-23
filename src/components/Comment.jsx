@@ -22,6 +22,7 @@ export function Comment({ username, timestamp, text, likes }) {
     } else {
       if (vote === 'up') setLikeCount(likeCount - 1);
       setVote('down');
+      setLikeCount((c) => c - 1);
     }
   }
 
@@ -45,7 +46,7 @@ export function Comment({ username, timestamp, text, likes }) {
             className={`${styles.actionBtn} ${vote === 'down' ? styles.active : ''}`}
             onClick={handleDislike}
           >
-            👎
+            👎 
           </button>
           <button className={styles.replyBtn}>Reply</button>
         </div>

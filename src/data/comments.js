@@ -11,7 +11,7 @@ export const comments = [
     username: '@Kimpie_paarntie',
     timestamp: ' 5 hours ago',
     text: 'Like if you love othman',
-    likes: -3,
+    likes: 3000,
   },
   {
     id: 3,
