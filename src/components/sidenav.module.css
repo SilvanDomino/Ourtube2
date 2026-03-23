@@ -1,5 +1,35 @@
 .sidenav {
-    height: 100vh;
-    background-color: var(--color-secondary);
-    border: 1px solid red;
+  position: relative;
+}
+
+.navigation {
+  position: relative;
+}
+
+.hamburger {
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  background-color: blue;
+  padding: 20px;
+  list-style: none;
+}
+
+.show {
+  display: flex;
+}
+
+.menu li {
+  color: white;
+  margin: 10px 0;
 }
