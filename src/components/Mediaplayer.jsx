@@ -34,6 +34,9 @@ export function Mediaplayer() {
           </button>
           <button type="button">{">"}</button>
         </div>
+        <div className={styles.bottomControls}>
+          <button type="button">test</button>
+        </div>
       </div>
     </div>
   );
