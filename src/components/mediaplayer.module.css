@@ -24,7 +24,6 @@
     height: 200px;
     width: 200px;
     color: white;
-    font-size: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,4 +35,39 @@
     border-radius: 50%;
     border: none;
     outline: none;
+    cursor: pointer;
+}
+
+.playIcon {
+    width: 0;
+    height: 0;
+    border-top: 38px solid transparent;
+    border-bottom: 38px solid transparent;
+    border-left: 62px solid white;
+    margin-left: 10px;
+}
+
+.pauseIcon {
+    position: relative;
+    width: 70px;
+    height: 78px;
+}
+
+.pauseIcon::before,
+.pauseIcon::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 22px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.pauseIcon::before {
+    left: 0;
+}
+
+.pauseIcon::after {
+    right: 0;
 }

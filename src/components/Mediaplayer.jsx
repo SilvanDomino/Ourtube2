@@ -23,13 +23,17 @@ export function Mediaplayer() {
       <video ref={videoRef} className={styles.video} src={video1}></video>
       <div className={styles.controlContainer}>
         <div className={styles.controls}>
-          <button>prev</button>
-          <button className={styles.playButton} onClick={togglePlay}>
+          <button>{"<"}</button>
+          <button className={styles.playButton} onClick={togglePlay} type="button">
             <div className={styles.buttonContent}>
-              {!isPlaying? "▶︎" : "❚❚"}
+              {!isPlaying ? (
+                <span className={styles.playIcon} aria-hidden="true" />
+              ) : (
+                <span className={styles.pauseIcon} aria-hidden="true" />
+              )}
             </div>
           </button>
-          <button>next</button>
+          <button>{">"}</button>
         </div>
       </div>
     </div>
