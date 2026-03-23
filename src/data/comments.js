@@ -3,7 +3,7 @@ export const comments = [
     id: 1,
     username: '@Spsum_dolor_sit',
     timestamp: ' 2 days ago',
-    text: '0:19 wat een lelijk haar',
+    text: '0:19 wat een parchtig haar',
     likes: 24,
   },
   {
