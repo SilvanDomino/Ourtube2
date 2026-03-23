@@ -6,7 +6,6 @@ import { useRef, useState } from 'react';
 export function Mediaplayer() {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [status, setStatus] = useState(0);
 
   function togglePlay(){
     console.log("play/pause");
@@ -16,14 +15,14 @@ export function Mediaplayer() {
       videoRef.current.play();
     }
     setIsPlaying(!isPlaying);
-    
   }
+
   return (
     <div className={styles.mediaplayer}>
       <video ref={videoRef} className={styles.video} src={video1}></video>
       <div className={styles.controlContainer}>
         <div className={styles.controls}>
-          <button>{"<"}</button>
+          <button type="button">{"<"}</button>
           <button className={styles.playButton} onClick={togglePlay} type="button">
             <div className={styles.buttonContent}>
               {!isPlaying ? (
@@ -33,7 +32,7 @@ export function Mediaplayer() {
               )}
             </div>
           </button>
-          <button>{">"}</button>
+          <button type="button">{">"}</button>
         </div>
       </div>
     </div>
