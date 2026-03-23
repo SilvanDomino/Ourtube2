@@ -1,5 +1,39 @@
-.mediaplayer {}
+.mediaplayer {
+    position: relative;
+}
 
 .video {
     width: 100%;
+}
+.controls{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 20%;
+    transition: 0.5s opacity ease;
+}
+.controls:hover{
+    opacity: 80%;
+    
+}
+.controls:hover .playButton{
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.buttonContent{
+    height: 200px;
+    width: 200px;
+    color: white;
+    font-size: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.playButton{
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+    outline: none;
 }
